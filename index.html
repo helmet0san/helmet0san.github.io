@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都时代妇产医院-专业妇产诊疗与母婴健康服务平台</title>
+    <meta name="description" content="花都时代妇产医院是一家专注于妇产科领域的现代化医疗机构，提供备孕指导、孕期检查、无痛分娩、产后康复及妇科疾病诊疗等全方位服务，致力于为女性及家庭提供安全、专业、温暖的医疗体验。">
+    <meta name="keywords" content="花都时代妇产医院,妇产医院,产科,妇科,无痛分娩,产后康复,孕期检查,女性健康">
+    <style>
+        /* ===== 全局样式 ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: #faf7f9;
+            color: #333;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul, ol { list-style: none; }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ===== 顶部信息条 ===== */
+        .top-bar {
+            background: #7a9e9f;
+            color: #fff;
+            font-size: 14px;
+            padding: 6px 0;
+        }
+        .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .top-bar span { margin-right: 18px; }
+        .top-bar .top-right { display: flex; align-items: center; }
+
+        /* ===== 页眉 ===== */
+        .header {
+            background: #fff;
+            padding: 18px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-bottom: 3px solid #e8c4cc;
+        }
+        .header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo-area { display: flex; align-items: center; }
+        .logo-icon {
+            width: 48px; height: 48px;
+            background: linear-gradient(135deg, #d48a9e, #b76e79);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-right: 12px;
+            color: #fff; font-size: 20px; font-weight: 700;
+            box-shadow: 0 4px 10px rgba(183, 110, 121, 0.3);
+        }
+        .logo-text h1 { font-size: 24px; color: #4a3b3f; font-weight: 600; letter-spacing: 1px; }
+        .logo-text p { font-size: 13px; color: #a07d86; letter-spacing: 2px; }
+        .header-info { text-align: right; font-size: 14px; color: #666; }
+        .header-info .phone { font-size: 20px; color: #b76e79; font-weight: 600; margin-top: 4px; }
+
+        /* ===== 导航 ===== */
+        .main-nav {
+            background: #b76e79;
+            box-shadow: 0 4px 12px rgba(183, 110, 121, 0.2);
+        }
+        .main-nav ul { display: flex; justify-content: center; flex-wrap: wrap; }
+        .main-nav li { position: relative; }
+        .main-nav li a {
+            display: block; padding: 14px 28px;
+            color: #fff; font-size: 16px; font-weight: 500;
+            transition: background 0.3s;
+            letter-spacing: 1px;
+        }
+        .main-nav li a:hover, .main-nav li a.active { background: #a05a64; }
+
+        /* ===== 首屏横幅 ===== */
+        .hero {
+            background: linear-gradient(105deg, #f7e9ed 0%, #fdf2f5 50%, #f5e2e7 100%);
+            padding: 60px 0;
+            border-bottom: 1px solid #f0d9de;
+        }
+        .hero .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        .hero-content { flex: 1 1 520px; }
+        .hero-content .tagline {
+            color: #b76e79; font-size: 15px; letter-spacing: 2px; margin-bottom: 8px;
+            border-left: 3px solid #b76e79; padding-left: 12px;
+        }
+        .hero-content h2 { font-size: 36px; color: #4a3b3f; margin-bottom: 16px; line-height: 1.4; }
+        .hero-content p { font-size: 16px; color: #6b5a60; margin-bottom: 24px; max-width: 540px; }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary {
+            background: #b76e79; color: #fff; padding: 12px 28px;
+            border-radius: 30px; font-size: 16px; transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(183,110,121,0.25);
+        }
+        .btn-primary:hover { background: #a05a64; transform: translateY(-2px); }
+        .btn-outline {
+            border: 2px solid #b76e79; color: #b76e79; padding: 10px 26px;
+            border-radius: 30px; font-size: 16px; transition: all 0.3s;
+        }
+        .btn-outline:hover { background: #b76e79; color: #fff; }
+        .hero-image { flex: 0 0 320px; text-align: center; }
+        .hero-image .circle-badge {
+            width: 260px; height: 260px; margin: 0 auto;
+            background: #fff; border-radius: 50%;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            box-shadow: 0 12px 30px rgba(183,110,121,0.15);
+            border: 6px solid #e8c4cc;
+        }
+        .circle-badge .num { font-size: 48px; font-weight: 700; color: #b76e79; line-height: 1; }
+        .circle-badge .lbl { font-size: 15px; color: #7a5c66; margin-top: 8px; letter-spacing: 2px; }
+
+        /* ===== 快速导航卡片 ===== */
+        .quick-cards { padding: 50px 0; }
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h3 { font-size: 30px; color: #4a3b3f; margin-bottom: 6px; }
+        .section-title p { color: #a07d86; font-size: 15px; letter-spacing: 1px; }
+        .cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .card-item {
+            background: #fff; border-radius: 12px; padding: 30px 20px;
+            text-align: center; box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+            transition: all 0.3s ease; border: 1px solid #f3e6ea;
+        }
+        .card-item:hover { transform: translateY(-8px); box-shadow: 0 12px 28px rgba(183,110,121,0.12); }
+        .card-icon { font-size: 40px; margin-bottom: 14px; }
+        .card-item h4 { font-size: 18px; color: #4a3b3f; margin-bottom: 8px; }
+        .card-item p { font-size: 14px; color: #8a7a80; line-height: 1.6; }
+
+        /* ===== 医院介绍 ===== */
+        .about-section { background: #fff; padding: 60px 0; }
+        .about-wrap { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
+        .about-text { flex: 1 1 50%; }
+        .about-text .sec-label { color: #b76e79; letter-spacing: 2px; font-size: 14px; margin-bottom: 8px; }
+        .about-text h3 { font-size: 28px; color: #4a3b3f; margin-bottom: 16px; }
+        .about-text p { color: #5f5055; margin-bottom: 14px; font-size: 15px; }
+        .about-stats { display: flex; gap: 30px; margin-top: 24px; flex-wrap: wrap; }
+        .stat-item { text-align: center; }
+        .stat-item .s-num { font-size: 30px; font-weight: 700; color: #b76e79; }
+        .stat-item .s-label { font-size: 13px; color: #8a7a80; }
+        .about-features { flex: 1 1 35%; background: #faf3f5; border-radius: 16px; padding: 30px; border-left: 4px solid #b76e79; }
+        .about-features h4 { color: #4a3b3f; margin-bottom: 16px; font-size: 18px; }
+        .about-features li { padding: 8px 0; font-size: 15px; color: #5f5055; border-bottom: 1px dashed #e8d4da; display: flex; align-items: center; }
+        .about-features li:last-child { border-bottom: none; }
+        .about-features li::before { content: "✓"; color: #b76e79; margin-right: 10px; font-weight: bold; }
+
+        /* ===== 科室中心 ===== */
+        .departments { padding: 60px 0; }
+        .dept-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .dept-item {
+            background: #fff; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-top: 4px solid #d9a7b0; transition: 0.3s;
+        }
+        .dept-item:hover { box-shadow: 0 8px 22px rgba(183,110,121,0.15); }
+        .dept-item h4 { color: #4a3b3f; font-size: 18px; margin-bottom: 8px; }
+        .dept-item p { font-size: 14px; color: #7a6a70; }
+        .dept-item .tag { display: inline-block; background: #faeef1; color: #b76e79; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin-top: 10px; }
+
+        /* ===== 服务流程 ===== */
+        .process-section { background: #fdf4f6; padding: 60px 0; }
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .step-item { text-align: center; position: relative; }
+        .step-num {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #b76e79; color: #fff; font-size: 20px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px; box-shadow: 0 6px 14px rgba(183,110,121,0.3);
+        }
+        .step-item h4 { color: #4a3b3f; margin-bottom: 6px; font-size: 17px; }
+        .step-item p { font-size: 14px; color: #7a6a70; }
+
+        /* ===== 医疗团队 ===== */
+        .team-section { padding: 60px 0; }
+        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .team-card {
+            background: #fff; border-radius: 14px; padding: 24px;
+            text-align: center; box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+        .team-card:hover { transform: translateY(-5px); }
+        .avatar {
+            width: 80px; height: 80px; border-radius: 50%;
+            background: linear-gradient(135deg, #d9a7b0, #b76e79);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 14px; color: #fff; font-size: 32px;
+        }
+        .team-card h4 { color: #4a3b3f; font-size: 18px; }
+        .team-card .role { color: #b76e79; font-size: 14px; margin: 4px 0 8px; }
+        .team-card p { font-size: 14px; color: #7a6a70; }
+
+        /* ===== 设备环境 ===== */
+        .facility-section { background: #fff; padding: 60px 0; }
+        .facility-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .facility-item { display: flex; gap: 16px; align-items: flex-start; padding: 18px; background: #faf7f9; border-radius: 12px; }
+        .facility-icon { font-size: 28px; color: #b76e79; }
+        .facility-item h4 { color: #4a3b3f; font-size: 17px; margin-bottom: 4px; }
+        .facility-item p { font-size: 14px; color: #7a6a70; }
+
+        /* ===== 就诊指南 ===== */
+        .guide-section { padding: 60px 0; }
+        .guide-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .guide-box { background: #fff; border-radius: 14px; padding: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 1px solid #f0e0e5; }
+        .guide-box h4 { color: #4a3b3f; font-size: 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .guide-box ul li { padding: 8px 0; border-bottom: 1px dashed #f0e0e5; font-size: 15px; color: #5f5055; display: flex; align-items: center; }
+        .guide-box ul li:last-child { border-bottom: none; }
+        .guide-box ul li::before { content: "•"; color: #b76e79; font-weight: bold; margin-right: 12px; font-size: 18px; }
+
+        /* ===== 常见问题 ===== */
+        .faq-section { background: #fdf4f6; padding: 60px 0; }
+        .faq-list { max-width: 860px; margin: 0 auto; }
+        .faq-item { background: #fff; border-radius: 12px; margin-bottom: 14px; padding: 20px 24px; box-shadow: 0 3px 10px rgba(0,0,0,0.03); }
+        .faq-q { font-weight: 600; color: #4a3b3f; font-size: 17px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-q span { color: #b76e79; font-size: 22px; }
+        .faq-a { margin-top: 12px; color: #6b5a60; font-size: 15px; border-top: 1px solid #f0e0e5; padding-top: 12px; }
+        .faq-a.hidden { display: none; }
+
+        /* ===== 联系方式 ===== */
+        .contact-section { padding: 60px 0; }
+        .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .contact-card { text-align: center; background: #fff; border-radius: 14px; padding: 30px 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .contact-card .c-icon { font-size: 36px; margin-bottom: 10px; color: #b76e79; }
+        .contact-card h4 { color: #4a3b3f; font-size: 18px; margin-bottom: 6px; }
+        .contact-card p { color: #7a6a70; font-size: 15px; }
+        .contact-card .c-detail { color: #b76e79; font-weight: 500; margin-top: 4px; }
+
+        /* ===== 页脚 ===== */
+        .footer { background: #3d3236; color: #cbb3ba; padding: 40px 0 20px; }
+        .footer-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; margin-bottom: 30px; }
+        .footer-about { flex: 1 1 300px; }
+        .footer-about h3 { color: #fff; margin-bottom: 12px; font-size: 20px; }
+        .footer-about p { font-size: 14px; line-height: 1.8; }
+        .footer-links { flex: 1 1 200px; }
+        .footer-links h4 { color: #fff; margin-bottom: 12px; font-size: 16px; }
+        .footer-links li { padding: 4px 0; font-size: 14px; }
+        .footer-contact h4 { color: #fff; margin-bottom: 12px; font-size: 16px; }
+        .footer-contact p { font-size: 14px; padding: 3px 0; }
+        .footer-bottom { border-top: 1px solid #52444a; padding-top: 16px; text-align: center; font-size: 13px; }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 992px) {
+            .cards-grid { grid-template-columns: repeat(2, 1fr); }
+            .dept-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-steps { grid-template-columns: repeat(2, 1fr); }
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+            .facility-grid { grid-template-columns: repeat(2, 1fr); }
+            .guide-wrap { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            body { font-size: 15px; }
+            .header .container { flex-direction: column; text-align: center; }
+            .header-info { text-align: center; margin-top: 10px; }
+            .main-nav ul { flex-direction: column; align-items: center; }
+            .main-nav li a { padding: 12px 20px; }
+            .hero-content h2 { font-size: 28px; }
+            .hero { padding: 40px 0; }
+            .hero-image { flex-basis: 100%; }
+            .cards-grid { grid-template-columns: 1fr; }
+            .dept-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .facility-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .about-wrap { flex-direction: column; }
+            .footer-top { flex-direction: column; }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 顶部信息条 -->
+<div class="top-bar">
+    <div class="container">
+        <div>
+            <span>☎ 门诊时间：8:00 - 20:00</span>
+            <span>★ 无假日医院</span>
+        </div>
+        <div class="top-right">
+            <span style="margin-right:0;">广州市花都区</span>
+        </div>
+    </div>
+</div>
+
+<!-- 页眉 -->
+<header class="header">
+    <div class="container">
+        <div class="logo-area">
+            <div class="logo-icon">花</div>
+            <div class="logo-text">
+                <h1>花都时代妇产医院</h1>
+                <p>Huadu Shidai Maternity Hospital</p>
+            </div>
+        </div>
+        <div class="header-info">
+            <span>健康热线</span>
+            <div class="phone">020-3688 6688</div>
+        </div>
+    </div>
+</header>
+
+<!-- 导航栏 -->
+<nav class="main-nav">
+    <ul>
+        <li><a href="#" class="active">首页</a></li>
+        <li><a href="#">医院简介</a></li>
+        <li><a href="#">产科中心</a></li>
+        <li><a href="#">妇科中心</a></li>
+        <li><a href="#">产后康复</a></li>
+        <li><a href="#">专家团队</a></li>
+        <li><a href="#">就诊指南</a></li>
+        <li><a href="#">联系我们</a></li>
+    </ul>
+</nav>
+
+<!-- 首屏横幅 -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="tagline">✦ 以专业守护母爱 · 以温暖迎接新生</div>
+            <h2>专注妇产医疗<br>为每一位女性提供全周期健康照护</h2>
+            <p>花都时代妇产医院汇聚经验丰富的妇产医疗团队，引入现代产科服务理念，开设产科、妇科、产后康复、计划生育等特色科室，致力于为女性朋友提供从备孕、孕期到产后的一站式专业服务。</p>
+            <div class="hero-btns">
+                <a href="#" class="btn-primary">在线预约挂号</a>
+                <a href="#" class="btn-outline">了解特色服务</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="circle-badge">
+                <div class="num">15+</div>
+                <div class="lbl">专业临床经验</div>
+                <div style="margin-top:12px; font-size:14px; color:#a07d86;">累计服务数万家庭</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 快速导航卡片 -->
+<section class="quick-cards">
+    <div class="container">
+        <div class="section-title">
+            <h3>诊疗服务中心</h3>
+            <p>围绕女性健康需求，提供精细化诊疗服务</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card-item">
+                <div class="card-icon">🤰</div>
+                <h4>优生备孕</h4>
+                <p>孕前检查、排卵监测、优生优育指导，科学迎接新生命。</p>
+            </div>
+            <div class="card-item">
+                <div class="card-icon">👶</div>
+                <h4>孕期管理</h4>
+                <p>从早孕建档到产前检查，全程跟踪母婴健康状况。</p>
+            </div>
+            <div class="card-item">
+                <div class="card-icon">🌸</div>
+                <h4>微创妇科</h4>
+                <p>宫腹腔镜微创诊疗，针对妇科常见病、多发病提供个体化方案。</p>
+            </div>
+            <div class="card-item">
+                <div class="card-icon">💆</div>
+                <h4>产后康复</h4>
+                <p>盆底修复、产后形体恢复，帮助新妈妈重获健康与自信。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 医院介绍 -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-wrap">
+            <div class="about-text">
+                <div class="sec-label">ABOUT US</div>
+                <h3>花都时代妇产医院</h3>
+                <p>花都时代妇产医院地处广州市花都区，是一家以妇产科为重点科室的现代化医疗机构。医院始终秉持“以患者为中心”的服务理念，结合现代医院管理制度，持续提升医疗服务质量与就医体验。</p>
+                <p>医院开设有产科、妇科、生殖健康与不孕症、妇女保健、产后康复等科室，配置有四维彩超、腹腔镜、宫腔镜、胎心监护系统等诊疗设备，并通过温馨的病房环境、规范的服务流程，为就诊者提供安全、舒适的就医空间。</p>
+                <p>我们深知迎接新生命是每个家庭的重要时刻。为此，医院推行孕期宣教、导乐陪伴、无痛分娩等人性化服务，帮助孕产妇减轻紧张情绪，获得良好的分娩体验。</p>
+                <div class="about-stats">
+                    <div class="stat-item"><div class="s-num">15+</div><div class="s-label">建院历程</div></div>
+                    <div class="stat-item"><div class="s-num">30+</div><div class="s-label">医护团队</div></div>
+                    <div class="stat-item"><div class="s-num">20+</div><div class="s-label">服务项目</div></div>
+                </div>
+            </div>
+            <div class="about-features">
+                <h4>我们的服务理念</h4>
+                <ul>
+                    <li>全程导诊陪护，简化就诊流程</li>
+                    <li>一人一诊室，保护个人隐私</li>
+                    <li>孕期营养与心理指导并重</li>
+                    <li>产后随访与康复计划定制</li>
+                    <li>24小时急诊绿色通道</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 科室中心 -->
+<section class="departments">
+    <div class="container">
+        <div class="section-title">
+            <h3>重点科室</h3>
+            <p>学科建设完善，聚焦女性全生命周期健康</p>
+        </div>
+        <div class="dept-grid">
+            <div class="dept-item">
+                <h4>产科</h4>
+                <p>围产期保健、产前筛查、无痛分娩、剖宫产、高危妊娠管理</p>
+                <span class="tag">热门科室</span>
+            </div>
+            <div class="dept-item">
+                <h4>妇科</h4>
+                <p>妇科炎症、子宫肌瘤、卵巢囊肿、月经不调、宫颈疾病诊疗</p>
+                <span class="tag">特色诊疗</span>
+            </div>
+            <div class="dept-item">
+                <h4>产后康复</h4>
+                <p>盆底功能评估与修复、腹直肌分离修复、产后催乳及形体恢复</p>
+                <span class="tag">个性化方案</span>
+            </div>
+            <div class="dept-item">
+                <h4>计划生育</h4>
+                <p>科学避孕指导、无痛人流、术后关爱与生育力保护咨询</p>
+                <span class="tag">专业规范</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 服务流程 -->
+<section class="process-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>便捷就诊流程</h3>
+            <p>简化就医环节，让您省心更安心</p>
+        </div>
+        <div class="process-steps">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <h4>预约咨询</h4>
+                <p>通过电话或网络提前预约，确定就诊时间与科室</p>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <h4>到院导诊</h4>
+                <p>导诊台接待，协助完成建档、挂号及基础检查</p>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <h4>医生看诊</h4>
+                <p>专业医生详细问诊，制定个体化诊疗方案</p>
+            </div>
+            <div class="step-item">
+                <div class="step-num">4</div>
+                <h4>随访管理</h4>
+                <p>诊后跟踪随访，提供康复指导与健康管理</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 医疗团队 -->
+<section class="team-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>医疗团队</h3>
+            <p>经验丰富的医护人员，为您的健康保驾护航</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="avatar">王</div>
+                <h4>王主任</h4>
+                <div class="role">产科 · 主任医师</div>
+                <p>从事妇产科临床工作多年，擅长高危妊娠管理及产程处理。</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">李</div>
+                <h4>李医生</h4>
+                <div class="role">妇科 · 副主任医师</div>
+                <p>专注妇科微创手术，在宫腹腔镜手术方面具有丰富经验。</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">张</div>
+                <h4>张医生</h4>
+                <div class="role">产后康复 · 主治医师</div>
+                <p>擅长盆底功能障碍评估与康复指导，注重个体化恢复方案。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 设备环境 -->
+<section class="facility-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>医疗环境与设备</h3>
+            <p>营造安心舒适的就医体验</p>
+        </div>
+        <div class="facility-grid">
+            <div class="facility-item">
+                <div class="facility-icon">🔬</div>
+                <div>
+                    <h4>四维彩超</h4>
+                    <p>用于胎儿系统筛查及妇科超声检查，图像清晰，助力准确诊断。</p>
+                </div>
+            </div>
+            <div class="facility-item">
+                <div class="facility-icon">🖥️</div>
+                <div>
+                    <h4>宫/腹腔镜系统</h4>
+                    <p>支持多种妇科微创手术，创伤小、恢复快，满足微创诊疗需求。</p>
+                </div>
+            </div>
+            <div class="facility-item">
+                <div class="facility-icon">🏥</div>
+                <div>
+                    <h4>温馨病房</h4>
+                    <p>提供单人间及双人间病房，配备独立卫浴与陪护设施。</p>
+                </div>
+            </div>
+            <div class="facility-item">
+                <div class="facility-icon">👩‍⚕️</div>
+                <div>
+                    <h4>层流手术室</h4>
+                    <p>严格规范的手术环境，降低感染风险，保障手术安全。</p>
+                </div>
+            </div>
+            <div class="facility-item">
+                <div class="facility-icon">📋</div>
+                <div>
+                    <h4>胎心监护仪</h4>
+                    <p>动态监测胎儿心率变化，实时掌握胎儿宫内状况。</p>
+                </div>
+            </div>
+            <div class="facility-item">
+                <div class="facility-icon">💊</div>
+                <div>
+                    <h4>独立药房</h4>
+                    <p>常用药品储备完善，取药便捷，药师提供用药指导。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 就诊指南 -->
+<section class="guide-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>就诊指南</h3>
+            <p>帮助您顺利就医，合理安排时间</p>
+        </div>
+        <div class="guide-wrap">
+            <div class="guide-box">
+                <h4>📌 预约方式</h4>
+                <ul>
+                    <li>电话预约：拨打 020-3688 6688 进行人工预约</li>
+                    <li>网络预约：通过官方合作平台在线提交预约信息</li>
+                    <li>现场挂号：至医院一楼导诊台办理挂号</li>
+                    <li>诊间预约：就诊后可直接与医生确认复诊时间</li>
+                </ul>
+            </div>
+            <div class="guide-box">
+                <h4>📋 就诊须知</h4>
+                <ul>
+                    <li>请携带有效身份证件及既往病历资料</li>
+                    <li>妇科检查请尽量避开月经期</li>
+                    <li>孕期产检请携带母子健康手册</li>
+                    <li>建议提前10-15分钟到院候诊</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 常见问题 -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>常见问题</h3>
+            <p>解答您关心的就诊疑问</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q">初次产检需要注意什么？ <span>+</span></div>
+                <div class="faq-a hidden">初次产检建议在确认怀孕后6-8周进行，需空腹到院，以便完成相关血液检查。同时携带身份证件，医生会询问月经史、既往孕产史等信息，请如实告知。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">医院开展无痛分娩吗？ <span>+</span></div>
+                <div class="faq-a hidden">我院开展椎管内分娩镇痛服务，由麻醉医生评估后实施。具体是否适合无痛分娩需根据产妇及胎儿情况而定，建议在产检时与医生沟通。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">产后康复从什么时候开始做比较好？ <span>+</span></div>
+                <div class="faq-a hidden">通常顺产后42天、剖宫产后56天可进行产后康复评估。医生会根据您的身体恢复情况，制定循序渐进的康复计划。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">医院可以陪同分娩吗？ <span>+</span></div>
+                <div class="faq-a hidden">在条件允许且产妇有需求的情况下，可安排家属进入产房陪伴，具体请提前与助产士沟通并遵守产房相关管理规定。</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 联系方式 -->
+<section class="contact-section">
+    <div class="container">
+        <div class="section-title">
+            <h3>联系我们</h3>
+            <p>欢迎到院参观或电话咨询</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="c-icon">📍</div>
+                <h4>医院地址</h4>
+                <p>广州市花都区新华街（详细地址请电话咨询）</p>
+            </div>
+            <div class="contact-card">
+                <div class="c-icon">☎️</div>
+                <h4>健康热线</h4>
+                <p class="c-detail">020-3688 6688</p>
+                <p>24小时咨询预约</p>
+            </div>
+            <div class="contact-card">
+                <div class="c-icon">🕒</div>
+                <h4>门诊时间</h4>
+                <p>每日 8:00 - 20:00</p>
+                <p>节假日不休</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-about">
+                <h3>花都时代妇产医院</h3>
+                <p>以专业医疗技术和人文关怀服务每一位就诊者，致力于成为花都地区值得信赖的妇产专科医院。</p>
+            </div>
+            <div class="footer-links">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">医院简介</a></li>
+                    <li><a href="#">产科中心</a></li>
+                    <li><a href="#">妇科中心</a></li>
+                    <li><a href="#">产后康复</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>联系方式</h4>
+                <p>电话：020-3688 6688</p>
+                <p>地址：广州市花都区</p>
+                <p>时间：8:00 - 20:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 花都时代妇产医院 版权所有 | 本网站信息仅供参考，不能替代医生面诊，具体诊疗请遵医嘱。</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // FAQ 展开/折叠
+    document.querySelectorAll('.faq-q').forEach(function(q) {
+        q.addEventListener('click', function() {
+            var answer = this.nextElementSibling;
+            var icon = this.querySelector('span');
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.textContent = '-';
+            } else {
+                answer.classList.add('hidden');
+                icon.textContent = '+';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
